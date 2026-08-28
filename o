@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Coimbra RP | Regras do Roleplay</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    background:#050505;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+}
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+    radial-gradient(circle at 50% 0%,rgba(255,0,0,.32),transparent 40%),
+    radial-gradient(circle at 0 100%,rgba(150,0,0,.2),transparent 35%);
+}
+.container{width:min(950px,92%);margin:auto;padding:25px 0 60px}
+.voltar{
+    display:inline-block;
+    padding:13px 21px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    background:linear-gradient(135deg,#a00000,#350000);
+    border:1px solid #ff2020;
+    border-radius:10px;
+}
+.cabecalho{text-align:center;margin:35px 0 40px}
+.logo{
+    width:min(70vw,350px);
+    max-height:350px;
+    object-fit:contain;
+    filter:drop-shadow(0 0 15px red) drop-shadow(0 0 40px rgba(255,0,0,.6));
+}
+.nome{color:#ff2020;letter-spacing:6px;font-weight:bold;font-size:13px}
+h1{
+    margin-top:10px;
+    font-size:clamp(30px,8vw,52px);
+    text-shadow:0 0 15px red;
+}
+.subtitulo{color:#999;margin-top:10px}
+.titulo{
+    padding-left:14px;
+    border-left:4px solid #ff2020;
+    margin-bottom:20px;
+}
+.titulo h2{font-size:25px}
+.titulo p{color:#888;margin-top:7px}
+.regras{display:flex;flex-direction:column;gap:14px}
+.regra{
+    padding:22px;
+    background:linear-gradient(145deg,#191919,#070707);
+    border:1px solid rgba(255,0,0,.25);
+    border-left:4px solid #c80000;
+    border-radius:14px;
+    transition:.3s;
+}
+.regra:hover{
+    transform:translateX(5px);
+    border-color:#ff2020;
+    box-shadow:0 0 25px rgba(255,0,0,.18);
+}
+.regra h3{font-size:17px;margin-bottom:9px}
+.regra h3 span{color:#ff2020}
+.regra p{color:#c8c8c8;line-height:1.7;font-size:14px}
+.punicoes{
+    margin-top:25px;
+    padding:24px;
+    background:linear-gradient(145deg,#350000,#0b0000);
+    border:1px solid #ff2020;
+    border-radius:15px;
+}
+.punicoes h2{color:#ff3030;margin-bottom:10px}
+.punicoes p{color:#ddd;line-height:1.7;font-size:14px}
+.rodape{
+    margin-top:45px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,0,0,.15);
+    text-align:center;
+    color:#666;
+    font-size:12px;
+}
+.rodape strong{color:#ff2020}
+@media(max-width:600px){
+    .logo{width:75vw}
+    .regra{padding:18px}
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+<a href="regulamento.html" class="voltar">← VOLTAR AO REGULAMENTO</a>
+
+<header class="cabecalho">
+<img src="logo.png" alt="Coimbra RP" class="logo">
+<div class="nome">COIMBRA RP</div>
+<h1>🎭 ROLEPLAY</h1>
+<p class="subtitulo">Regulamento Oficial de Roleplay</p>
+</header>
+
+<div class="titulo">
+<h2>🔴 REGRAS DO ROLEPLAY</h2>
+<p>Todos os jogadores estão sujeitos a estas regras.</p>
+</div>
+
+<div class="regras">
+
+<article class="regra">
+<h3><span>Art. 1.º</span> — Imersão</h3>
+<p>É obrigatório permanecer no personagem e agir de forma realista. Quebras de personagem sem motivo válido são proibidas.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 2.º</span> — Metagaming</h3>
+<p>É expressamente proibido utilizar informações obtidas fora do RP para tomar decisões, localizar jogadores ou obter qualquer vantagem dentro do RP.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 3.º</span> — Powergaming</h3>
+<p>É proibido executar ações irreais, impossíveis ou impor ações a outro jogador sem lhe permitir uma reação. Todas as ações devem respeitar as capacidades do personagem.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 4.º</span> — RDM</h3>
+<p>É proibido matar, ferir ou iniciar confrontos contra outro jogador sem motivo e contexto de RP devidamente justificável.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 5.º</span> — VDM</h3>
+<p>É proibido utilizar qualquer veículo de forma intencional para atropelar, ferir ou eliminar jogadores sem contexto válido de RP.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 6.º</span> — FearRP</h3>
+<p>É obrigatório valorizar a vida do personagem. Perante uma ameaça credível, o jogador deve reagir com medo e evitar comportamentos incompatíveis com a situação.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 7.º</span> — Combat Logging</h3>
+<p>É expressamente proibido abandonar o servidor durante uma situação de RP para evitar consequências. Desconexões involuntárias devem ser comunicadas e o jogador deve regressar assim que possível.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 8.º</span> — Revenge RP</h3>
+<p>É proibido procurar vingança utilizando informações ou acontecimentos anteriores à morte do personagem. Qualquer nova situação deve possuir contexto próprio.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 9.º</span> — NLR</h3>
+<p>Após uma morte definitiva, o personagem não pode regressar imediatamente ao local, interferir na situação ou utilizar informações relacionadas com a sua morte.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 10.º</span> — Valor da Vida</h3>
+<p>O personagem deve preservar a própria vida em todas as situações. Comportamentos suicidas, provocatórios ou excessivamente arriscados sem contexto são proibidos.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 11.º</span> — OOC</h3>
+<p>É proibido utilizar conversas, informações ou acontecimentos OOC para influenciar ou obter vantagens em situações IC.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 12.º</span> — Quebra de RP</h3>
+<p>É proibido abandonar, interromper, ignorar ou prejudicar deliberadamente uma situação de RP. Todos os envolvidos devem respeitar a continuidade da cena.</p>
+</article>
+
+<article class="regra">
+<h3><span>Art. 13.º</span> — Bom Senso</h3>
+<p>Qualquer ação que prejudique a imersão, a realidade ou a experiência dos restantes jogadores poderá ser considerada quebra de RP, mesmo que não esteja expressamente prevista neste regulamento.</p>
+</article>
+
+</div>
+
+<div class="punicoes">
+<h2>⚠️ PUNIÇÕES</h2>
+<p>O incumprimento das regras poderá resultar em advertência, kick ou banimento. A gravidade da punição será determinada pela Administração conforme a infração, provas e reincidência.</p>
+</div>
+
+<footer class="rodape">
+© 2026 <strong>Coimbra RP</strong> — Regulamento Oficial
+</footer>
+
+</main>
+</body>
+</html>
