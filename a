@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coimbra RP | Profissões</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* FUNDO */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+        radial-gradient(circle at 50% 0%,rgba(255,0,0,.35),transparent 40%),
+        radial-gradient(circle at 0% 80%,rgba(140,0,0,.20),transparent 35%),
+        radial-gradient(circle at 100% 70%,rgba(180,0,0,.18),transparent 35%);
+}
+
+/* RAIOS / BRILHOS */
+body::after{
+    content:"";
+    position:fixed;
+    inset:-50%;
+    z-index:-1;
+    background:
+        linear-gradient(
+            115deg,
+            transparent 45%,
+            rgba(255,0,0,.06) 47%,
+            transparent 49%
+        ),
+        linear-gradient(
+            65deg,
+            transparent 45%,
+            rgba(255,0,0,.05) 47%,
+            transparent 49%
+        );
+    animation:raios 8s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes raios{
+    from{
+        transform:translateX(-5%) translateY(-5%);
+    }
+    to{
+        transform:translateX(5%) translateY(5%);
+    }
+}
+
+/* CONTAINER */
+.container{
+    width:min(1050px,92%);
+    margin:auto;
+    padding:25px 0 60px;
+}
+
+/* BOTÃO VOLTAR */
+.voltar{
+    display:inline-block;
+    padding:13px 22px;
+    color:white;
+    text-decoration:none;
+    font-weight:900;
+    background:linear-gradient(135deg,#a00000,#350000);
+    border:1px solid #ff2020;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.voltar:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(255,0,0,.55);
+}
+
+/* CABEÇALHO */
+.cabecalho{
+    text-align:center;
+    margin:35px 0 45px;
+}
+
+.logo{
+    width:min(60vw,300px);
+    max-height:300px;
+    object-fit:contain;
+    display:block;
+    margin:auto;
+
+    filter:
+        drop-shadow(0 0 15px red)
+        drop-shadow(0 0 40px rgba(255,0,0,.6));
+
+    animation:brilhoLogo 3s ease-in-out infinite;
+}
+
+@keyframes brilhoLogo{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.04);
+    }
+}
+
+.nome{
+    margin-top:15px;
+    color:#ff2020;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:6px;
+}
+
+h1{
+    margin-top:10px;
+    font-size:clamp(32px,8vw,58px);
+    font-weight:900;
+
+    text-shadow:
+        0 0 15px red,
+        0 0 35px rgba(255,0,0,.7);
+}
+
+.subtitulo{
+    margin-top:10px;
+    color:#999;
+    font-size:15px;
+}
+
+/* TÍTULO */
+.titulo{
+    padding-left:15px;
+    border-left:4px solid #ff2020;
+    margin-bottom:25px;
+}
+
+.titulo h2{
+    font-size:27px;
+}
+
+.titulo p{
+    margin-top:8px;
+    color:#888;
+}
+
+/* PROFISSÕES */
+.profissoes{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+/* CARTÃO */
+.profissao{
+    overflow:hidden;
+    text-decoration:none;
+    color:white;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35,35,35,.98),
+            rgba(7,7,7,.98)
+        );
+
+    border:1px solid rgba(255,0,0,.3);
+    border-radius:18px;
+
+    transition:.35s;
+
+    box-shadow:
+        0 0 20px rgba(255,0,0,.05);
+}
+
+.profissao:hover{
+    transform:translateY(-8px);
+
+    border-color:#ff2020;
+
+    box-shadow:
+        0 0 30px rgba(255,0,0,.3),
+        0 0 60px rgba(255,0,0,.08);
+}
+
+/* IMAGEM */
+.imagem{
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    background:#0b0b0b;
+    position:relative;
+}
+
+.imagem::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.75),
+            transparent 55%
+        );
+
+    pointer-events:none;
+}
+
+.imagem img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.4s;
+}
+
+.profissao:hover .imagem img{
+    transform:scale(1.06);
+}
+
+/* TEXTO */
+.conteudo{
+    padding:22px;
+}
+
+.conteudo h3{
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.conteudo h3 span{
+    color:#ff2020;
+}
+
+.conteudo p{
+    color:#999;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.entrar{
+    display:inline-block;
+    margin-top:15px;
+
+    padding:10px 18px;
+
+    background:linear-gradient(
+        135deg,
+        #b00000,
+        #420000
+    );
+
+    border:1px solid #ff2020;
+    border-radius:8px;
+
+    font-size:12px;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.profissao:hover .entrar{
+    background:linear-gradient(
+        135deg,
+        #e00000,
+        #650000
+    );
+
+    box-shadow:0 0 18px rgba(255,0,0,.4);
+}
+
+/* RODAPÉ */
+.rodape{
+    margin-top:50px;
+    padding-top:25px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,0,0,.15);
+
+    color:#666;
+    font-size:12px;
+}
+
+.rodape strong{
+    color:#ff2020;
+}
+
+/* TELEMÓVEL */
+@media(max-width:700px){
+
+    .profissoes{
+        grid-template-columns:1fr;
+    }
+
+    .imagem{
+        height:210px;
+    }
+
+    .logo{
+        width:75vw;
+    }
+
+    .conteudo{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+<!-- VOLTAR -->
+<a href="index.html" class="voltar">
+    ← VOLTAR AO INÍCIO
+</a>
+
+<!-- CABEÇALHO -->
+<header class="cabecalho">
+
+    <img
+        src="logo.png"
+        alt="Coimbra RP"
+        class="logo"
+    >
+
+    <div class="nome">
+        COIMBRA RP
+    </div>
+
+    <h1>
+        💼 PROFISSÕES
+    </h1>
+
+    <p class="subtitulo">
+        Escolhe uma profissão para consultar as informações.
+    </p>
+
+</header>
+
+<!-- TÍTULO -->
+<div class="titulo">
+
+    <h2>
+        🔴 PROFISSÕES DISPONÍVEIS
+    </h2>
+
+    <p>
+        Consulta as diferentes profissões disponíveis no Coimbra RP.
+    </p>
+
+</div>
+
+<!-- PROFISSÕES -->
+<section class="profissoes">
+
+    <!-- PSP -->
+    <a href="profissao-psp.html" class="profissao">
+
+        <div class="imagem">
+            <img src="policia.jpg" alt="Polícia de Segurança Pública">
+        </div>
+
+        <div class="conteudo">
+
+            <h3>
+                <span>01</span> — Polícia de Segurança Pública
+            </h3>
+
+            <p>
+                Responsável pela segurança pública, patrulhamento,
+                fiscalização e manutenção da ordem.
+            </p>
+
+            <div class="entrar">
+                VER PROFISSÃO →
+            </div>
+
+        </div>
+
+    </a>
+
+    <!-- GNR -->
+    <a href="profissao-gnr.html" class="profissao">
+
+        <div class="imagem">
+            <img src="gnr.jpg" alt="Guarda Nacional Republicana">
+        </div>
+
+        <div class="conteudo">
+
+            <h3>
+                <span>02</span> — Guarda Nacional Republicana
+            </h3>
+
+            <p>
+                Força de segurança responsável pelo patrulhamento,
+                fiscalização e segurança no território.
+            </p>
+
+            <div class="entrar">
+                VER PROFISSÃO →
+            </div>
+
+        </div>
+
+    </a>
+
+    <!-- BOMBEIROS -->
+    <a href="profissao-bombeiro.html" class="profissao">
+
+        <div class="imagem">
+            <img src="bombeiro.jpg" alt="Bombeiros">
+        </div>
+
+        <div class="conteudo">
+
+            <h3>
+                <span>03</span> — Bombeiros
+            </h3>
+
+            <p>
+                Serviço de emergência responsável pelo combate a incêndios,
+                salvamentos e assistência em situações de emergência.
+            </p>
+
+            <div class="entrar">
+                VER PROFISSÃO →
+            </div>
+
+        </div>
+
+    </a>
+
+    <!-- SIC -->
+    <a href="profissao-sic.html" class="profissao">
+
+        <div class="imagem">
+            <img src="sic.jpg" alt="SIC">
+        </div>
+
+        <div class="conteudo">
+
+            <h3>
+                <span>04</span> — SIC
+            </h3>
+
+            <p>
+                Investigação criminal, recolha de informação
+                e investigação de ocorrências.
+            </p>
+
+            <div class="entrar">
+                VER PROFISSÃO →
+            </div>
+
+        </div>
+
+    </a>
+
+    <!-- INEM -->
+    <a href="profissao-inem.html" class="profissao">
+
+        <div class="imagem">
+            <img src="inem.jpg" alt="Hospital INEM">
+        </div>
+
+        <div class="conteudo">
+
+            <h3>
+                <span>05</span> — Hospital / INEM
+            </h3>
+
+            <p>
+                Atendimento médico, emergência pré-hospitalar
+                e transporte de pacientes.
+            </p>
+
+            <div class="entrar">
+                VER PROFISSÃO →
+            </div>
+
+        </div>
+
+    </a>
+
+    <!-- UBER -->
+    <a href="profissao-uber.html" class="profissao">
+
+        <div class="imagem">
+            <img src="uber.jpg" alt="Uber">
+        </div>
+
+        <div class="conteudo">
+
+            <h3>
+                <span>06</span> — Uber
+            </h3>
+
+            <p>
+                Serviço de transporte de passageiros,
+                garantindo deslocações seguras e profissionais.
+            </p>
+
+            <div class="entrar">
+                VER PROFISSÃO →
+            </div>
+
+        </div>
+
+    </a>
+
+    <!-- NORAUTE -->
+    <a href="profissao-noraute.html" class="profissao">
+
+        <div class="imagem">
+            <img src="noraute.jpg" alt="Noraute">
+        </div>
+
+        <div class="conteudo">
+
+            <h3>
+                <span>07</span> — Noraute
+            </h3>
+
+            <p>
+                Serviço profissional disponível no Coimbra RP,
+                com funções específicas dentro do servidor.
+            </p>
+
+            <div class="entrar">
+                VER PROFISSÃO →
+            </div>
+
+        </div>
+
+    </a>
+
+</section>
+
+<!-- RODAPÉ -->
+<footer class="rodape">
+
+    © 2026 <strong>Coimbra RP</strong> — Profissões Oficiais
+
+</footer>
+
+</main>
+
+</body>
+</html>
