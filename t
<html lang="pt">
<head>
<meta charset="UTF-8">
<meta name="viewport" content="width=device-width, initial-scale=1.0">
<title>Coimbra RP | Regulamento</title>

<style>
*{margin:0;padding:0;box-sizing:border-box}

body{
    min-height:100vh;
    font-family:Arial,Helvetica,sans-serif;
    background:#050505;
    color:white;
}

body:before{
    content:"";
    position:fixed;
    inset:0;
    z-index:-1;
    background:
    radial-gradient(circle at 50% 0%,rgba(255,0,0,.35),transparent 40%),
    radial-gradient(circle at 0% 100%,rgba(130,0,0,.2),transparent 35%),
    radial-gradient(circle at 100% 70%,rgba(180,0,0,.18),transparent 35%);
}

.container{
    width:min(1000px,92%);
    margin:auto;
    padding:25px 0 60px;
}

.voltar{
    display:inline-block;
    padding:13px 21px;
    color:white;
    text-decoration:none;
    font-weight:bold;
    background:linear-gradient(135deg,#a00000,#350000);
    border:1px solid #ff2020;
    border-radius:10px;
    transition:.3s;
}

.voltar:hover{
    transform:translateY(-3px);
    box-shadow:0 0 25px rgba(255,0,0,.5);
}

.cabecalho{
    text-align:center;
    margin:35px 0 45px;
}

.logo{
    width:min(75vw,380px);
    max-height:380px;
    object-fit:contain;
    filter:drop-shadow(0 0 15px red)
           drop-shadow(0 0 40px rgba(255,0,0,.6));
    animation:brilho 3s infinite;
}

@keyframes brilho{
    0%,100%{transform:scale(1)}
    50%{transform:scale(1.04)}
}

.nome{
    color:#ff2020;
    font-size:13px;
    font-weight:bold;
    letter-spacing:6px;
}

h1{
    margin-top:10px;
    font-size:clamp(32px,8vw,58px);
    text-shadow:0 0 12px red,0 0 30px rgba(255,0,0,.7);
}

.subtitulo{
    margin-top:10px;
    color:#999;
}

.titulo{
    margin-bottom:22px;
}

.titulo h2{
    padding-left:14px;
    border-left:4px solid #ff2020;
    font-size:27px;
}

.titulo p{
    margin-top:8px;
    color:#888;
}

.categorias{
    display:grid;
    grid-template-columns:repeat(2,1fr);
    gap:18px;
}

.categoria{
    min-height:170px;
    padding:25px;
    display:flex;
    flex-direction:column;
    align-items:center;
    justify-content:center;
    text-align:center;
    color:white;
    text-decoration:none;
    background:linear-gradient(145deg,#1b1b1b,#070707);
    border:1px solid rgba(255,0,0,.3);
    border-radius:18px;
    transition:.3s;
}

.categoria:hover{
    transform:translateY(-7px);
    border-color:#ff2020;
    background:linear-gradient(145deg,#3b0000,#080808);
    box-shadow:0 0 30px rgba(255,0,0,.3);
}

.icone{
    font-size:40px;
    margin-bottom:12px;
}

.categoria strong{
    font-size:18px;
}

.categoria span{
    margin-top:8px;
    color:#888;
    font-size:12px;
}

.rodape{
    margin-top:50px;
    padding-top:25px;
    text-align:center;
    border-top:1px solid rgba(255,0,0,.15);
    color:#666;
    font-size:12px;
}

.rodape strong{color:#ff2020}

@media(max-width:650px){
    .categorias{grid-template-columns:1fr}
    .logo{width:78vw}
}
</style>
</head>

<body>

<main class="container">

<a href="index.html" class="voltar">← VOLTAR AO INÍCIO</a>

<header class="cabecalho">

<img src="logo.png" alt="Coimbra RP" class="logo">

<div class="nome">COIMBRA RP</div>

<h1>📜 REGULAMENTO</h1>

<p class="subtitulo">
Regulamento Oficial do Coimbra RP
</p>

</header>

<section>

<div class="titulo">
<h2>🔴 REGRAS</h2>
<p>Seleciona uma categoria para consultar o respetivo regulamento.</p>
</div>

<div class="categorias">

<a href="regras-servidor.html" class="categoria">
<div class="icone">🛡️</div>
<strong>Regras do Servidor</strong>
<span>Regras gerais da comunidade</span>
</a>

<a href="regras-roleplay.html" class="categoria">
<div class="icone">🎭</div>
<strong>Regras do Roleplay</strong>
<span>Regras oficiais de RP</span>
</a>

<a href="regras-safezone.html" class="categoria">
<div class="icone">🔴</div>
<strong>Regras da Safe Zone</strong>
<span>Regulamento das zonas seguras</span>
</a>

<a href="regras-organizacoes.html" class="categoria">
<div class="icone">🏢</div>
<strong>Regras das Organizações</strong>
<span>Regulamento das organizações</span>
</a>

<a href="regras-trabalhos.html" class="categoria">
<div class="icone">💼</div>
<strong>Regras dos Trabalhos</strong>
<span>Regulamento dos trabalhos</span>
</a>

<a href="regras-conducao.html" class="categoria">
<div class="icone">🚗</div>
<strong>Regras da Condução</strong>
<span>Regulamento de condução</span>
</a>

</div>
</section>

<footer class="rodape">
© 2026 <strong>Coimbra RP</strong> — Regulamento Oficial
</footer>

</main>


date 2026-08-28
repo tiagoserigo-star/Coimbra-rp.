@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coimbra RP | Regulamento</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    min-height:100vh;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:white;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+    radial-gradient(circle at 50% 0%,rgba(255,0,0,.35),transparent 40%),
+    radial-gradient(circle at 0% 100%,rgba(130,0,0,.2),transparent 35%),
+    radial-gradient(circle at 100% 70%,rgba(180,0,0,.18),transparent 35%);
+}
+
+.container{
+    width:min(1000px,92%);
+    margin:auto;
+    padding:25px 0 60px;
+}
+
+.voltar{
+    display:inline-block;
+    padding:13px 21px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    background:linear-gradient(135deg,#a00000,#350000);
+    border:1px solid #ff2020;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.voltar:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(255,0,0,.5);
+}
+
+.cabecalho{
+    text-align:center;
+    margin:35px 0 45px;
+}
+
+.logo{
+    width:min(75vw,380px);
+    max-height:380px;
+    object-fit:contain;
+    filter:drop-shadow(0 0 15px red)
+           drop-shadow(0 0 40px rgba(255,0,0,.6));
+    animation:brilho 3s infinite;
+}
+
+@keyframes brilho{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.04)}
+}
+
+.nome{
+    color:#ff2020;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:6px;
+}
+
+h1{
+    margin-top:10px;
+    font-size:clamp(32px,8vw,58px);
+    text-shadow:0 0 12px red,0 0 30px rgba(255,0,0,.7);
+}
+
+.subtitulo{
+    margin-top:10px;
+    color:#999;
+}
+
+.titulo{
+    margin-bottom:22px;
+}
+
+.titulo h2{
+    padding-left:14px;
+    border-left:4px solid #ff2020;
+    font-size:27px;
+}
+
+.titulo p{
+    margin-top:8px;
+    color:#888;
+}
+
+.categorias{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.categoria{
+    min-height:170px;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    text-decoration:none;
+    background:linear-gradient(145deg,#1b1b1b,#070707);
+    border:1px solid rgba(255,0,0,.3);
+    border-radius:18px;
+    transition:.3s;
+}
+
+.categoria:hover{
+    transform:translateY(-7px);
+    border-color:#ff2020;
+    background:linear-gradient(145deg,#3b0000,#080808);
+    box-shadow:0 0 30px rgba(255,0,0,.3);
+}
+
+.icone{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.categoria strong{
+    font-size:18px;
+}
+
+.categoria span{
+    margin-top:8px;
+    color:#888;
+    font-size:12px;
+}
+
+.rodape{
+    margin-top:50px;
+    padding-top:25px;
+    text-align:center;
+    border-top:1px solid rgba(255,0,0,.15);
+    color:#666;
+    font-size:12px;
+}
+
+.rodape strong{color:#ff2020}
+
+@media(max-width:650px){
+    .categorias{grid-template-columns:1fr}
+    .logo{width:78vw}
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+<a href="index.html" class="voltar">← VOLTAR AO INÍCIO</a>
+
+<header class="cabecalho">
+
+<img src="logo.png" alt="Coimbra RP" class="logo">
+
+<div class="nome">COIMBRA RP</div>
+
+<h1>📜 REGULAMENTO</h1>
+
+<p class="subtitulo">
+Regulamento Oficial do Coimbra RP
+</p>
+
+</header>
+
+<section>
+
+<div class="titulo">
+<h2>🔴 REGRAS</h2>
+<p>Seleciona uma categoria para consultar o respetivo regulamento.</p>
+</div>
+
+<div class="categorias">
+
+<a href="regras-servidor.html" class="categoria">
+<div class="icone">🛡️</div>
+<strong>Regras do Servidor</strong>
+<span>Regras gerais da comunidade</span>
+</a>
+
+<a href="regras-roleplay.html" class="categoria">
+<div class="icone">🎭</div>
+<strong>Regras do Roleplay</strong>
+<span>Regras oficiais de RP</span>
+</a>
+
+<a href="regras-safezone.html" class="categoria">
+<div class="icone">🔴</div>
+<strong>Regras da Safe Zone</strong>
+<span>Regulamento das zonas seguras</span>
+</a>
+
+<a href="regras-organizacoes.html" class="categoria">
+<div class="icone">🏢</div>
+<strong>Regras das Organizações</strong>
+<span>Regulamento das organizações</span>
+</a>
+
+<a href="regras-trabalhos.html" class="categoria">
+<div class="icone">💼</div>
+<strong>Regras dos Trabalhos</strong>
+<span>Regulamento dos trabalhos</span>
+</a>
+
+<a href="regras-conducao.html" class="categoria">
+<div class="icone">🚗</div>
+<strong>Regras da Condução</strong>
+<span>Regulamento de condução</span>
+</a>
+
+</div>
+</section>
+
+<footer class="rodape">
+© 2026 <strong>Coimbra RP</strong> — Regulamento Oficial
+</footer>
+
+</main>
+
+</body>
+</html>
