@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Fundo com brilho vermelho */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 10%, rgba(180, 0, 0, 0.35), transparent 35%),
+        radial-gradient(circle at 10% 80%, rgba(120, 0, 0, 0.20), transparent 30%),
+        radial-gradient(circle at 90% 70%, rgba(180, 0, 0, 0.18), transparent 30%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Topo */
+.topo {
+    text-align: center;
+    padding: 45px 20px 30px;
+}
+
+/* LOGO GRANDE */
+.logo {
+    width: min(75vw, 420px);
+    max-height: 420px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255, 0, 0, 0.8))
+        drop-shadow(0 0 30px rgba(180, 0, 0, 0.5));
+
+    animation: logoBrilho 3s ease-in-out infinite;
+}
+
+@keyframes logoBrilho {
+    0%, 100% {
+        transform: scale(1);
+        filter:
+            drop-shadow(0 0 10px rgba(255, 0, 0, 0.7))
+            drop-shadow(0 0 25px rgba(180, 0, 0, 0.4));
+    }
+
+    50% {
+        transform: scale(1.03);
+        filter:
+            drop-shadow(0 0 18px rgba(255, 0, 0, 1))
+            drop-shadow(0 0 40px rgba(180, 0, 0, 0.7));
+    }
+}
+
+.topo h1 {
+    font-size: clamp(32px, 8vw, 65px);
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+.topo p {
+    margin-top: 8px;
+    color: #ff2020;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+/* Conteúdo */
+main {
+    width: min(900px, 92%);
+    margin: auto;
+}
+
+section {
+    background: rgba(15, 15, 15, 0.92);
+    border: 1px solid rgba(255, 0, 0, 0.35);
+    border-radius: 20px;
+    padding: 35px 25px;
+    margin: 25px 0;
+    text-align: center;
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 0.08),
+        inset 0 0 30px rgba(255, 0, 0, 0.03);
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+section p {
+    color: #cfcfcf;
+    line-height: 1.6;
+}
+
+/* Botões */
+.botao {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 1px solid #ff2020;
+    background: linear-gradient(135deg, #b00000, #450000);
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.25);
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #e00000, #650000);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.55);
+}
+
+button.botao {
+    font-size: 16px;
+}
+
+/* Telemóvel */
+@media (max-width: 600px) {
+
+    .topo {
+        padding-top: 30px;
+    }
+
+    .logo {
+        width: 80vw;
+    }
+
+    section {
+        padding: 28px 18px;
+    }
+
+    .topo h1
